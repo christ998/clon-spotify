@@ -1,0 +1,14 @@
+.body_container {
+  flex: 0.8;
+}
+
+.info_container {
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  img {
+    width: 20vw;
+    margin: 0 20px;
+    box-shadow: 0 4px 60px #000;
+  }
+}

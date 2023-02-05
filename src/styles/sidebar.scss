@@ -1,0 +1,28 @@
+.sidebar_container {
+  flex: 0.2;
+  height: 100vh;
+  background-color: black;
+  color: white;
+  min-width: 240px;
+  img {
+    height: 70px;
+    padding: 10px;
+
+  }
+}
+
+.sidebar__items {
+  display: flex;
+  margin-left: 20px;
+  color: gray;
+  height: 60px;
+  align-items: center; //Para alinear el ícono con el texto
+  cursor: pointer;
+  transition: 300ms color ease-in;
+  &:hover {
+    color: #fff;
+  }
+  h5 {
+    margin: 10px 0 0 20px;
+  }
+}
