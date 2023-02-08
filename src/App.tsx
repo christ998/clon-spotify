@@ -10,6 +10,7 @@ import {getTokenFromUrl} from "./logicSpotify";
 import {useDispatch, useSelector} from "react-redux";
 import {selectUser, SET_USER} from "./reducers/UserSlice";
 import {selectToken, SET_TOKEN} from "./reducers/TokenSlice";
+import {SET_PLAYLIST} from "./reducers/PlaylistSlice";
 
 const spotifyApi = new SpotifyWebApi()
 
@@ -22,17 +23,21 @@ function App() {
         const hash = getTokenFromUrl()
         // window.location.hash=""
         const _token = hash.access_token
-        if (_token){
+
+        if (_token) {
             dispatch(SET_TOKEN(_token))
             spotifyApi.setAccessToken(_token)
             spotifyApi.getMe().then(user => {
-                dispatch(SET_USER({user:user}))
+                dispatch(SET_USER(user))
             })
-            console.log("token => ", token)
-            spotifyApi.getPlaylist().then(playlist => console.log(playlist))
+            spotifyApi.getPlaylist("37i9dQZF1DXclgCwbk0uat").then(
+                playlist => {
+                    dispatch(SET_PLAYLIST(playlist))
+                }
+            )
         }
 
-    },[dispatch])
+    }, [dispatch])
 
     return (
         <ThemeProvider theme={theme}>

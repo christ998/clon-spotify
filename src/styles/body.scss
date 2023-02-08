@@ -1,5 +1,13 @@
 .body_container {
   flex: 0.8;
+  background: linear-gradient(#340034, #000);
+  color: #fff;
+  height: 100vh;
+  padding: 30px;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .info_container {
@@ -11,4 +19,53 @@
     margin: 0 20px;
     box-shadow: 0 4px 60px #000;
   }
+}
+
+.info_text {
+  flex: 1;
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  .MuiSvgIcon-root {
+    margin-right: 20px;
+  }
+}
+
+.songRowContainer {
+  display: flex;
+  margin-left: 25px;
+  align-items: center;
+  color: #fff;
+  :hover{
+    cursor: pointer;
+    background-color: #000000;
+    opacity: 0.8;
+  }
+  img {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+  }
+}
+.songInfo {
+  margin-left: 20px;
+  p {
+    margin-top: 3px;
+    color: lightgray;
+  }
+}
+
+.playCircleButton {
+  margin: 20px 0 20px 50px;
+  transition: transform 200ms ease-in-out !important;
+}
+
+.playCircleButton:hover {
+  transform: scale(1.1) !important;
+  cursor: pointer;
 }

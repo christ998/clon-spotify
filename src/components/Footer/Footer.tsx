@@ -25,10 +25,10 @@ function Footer() {
                 </Box>
             </FooterLeft>
             <FooterCentre>
-                <ShuffleIcon/>
+                <ShuffleIcon className="shuffle"/>
                 <SkipPrevious/>
                 <PlayCircleOutline/>
-                <SkipNext/>
+                <SkipNext className="repeat"/>
                 <Repeat/>
             </FooterCentre>
             <FooterRight>
